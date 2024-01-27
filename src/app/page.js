@@ -17,7 +17,7 @@ export default function Home() {
   }
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Hello World</h1>
+      <h1>Hello World v2</h1>
       <button onClick={handleClick} className="bg-green-400">Press Me</button>
       {data && JSON.stringify(data)}
     </main>
