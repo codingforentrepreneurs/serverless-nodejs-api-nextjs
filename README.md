@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Example App Using the Serverless Node.js Api
 
-## Getting Started
+This is a Next.js application designed to:
 
-First, run the development server:
+- Be Deployed on Vercel.com
+- Use a pre-existing backend/API instead of Next.js's API (although you can use both)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+The API we will use is what we created in the Serverless Node.js API course [repo](https://github.com/codingforentrepreneurs/serverless-nodejs-api). The Serverless Node.js API is deployed on AWS Lambda via the [Serverless framework](https://github.com/serverless/serverless) and [Neon's Serverless Postgres Database](https://neon.tech) service.
+
+To creat this app, we just ran:
+
+![Create Next App Screenshot](./reference/creat-next-app-setup.png)
+
+Then we added:
+
+- `vercel.json`
+
+With the contents:
+
+```json
+{
+    "rewrites": [
+        { 
+            "source": "/api/leads",
+            "destination": "https://my-api-example.com/api/leads"
+        }
+    ]
+}
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
