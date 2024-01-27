@@ -1,0 +1,9 @@
+
+{
+    "rewrites": [
+        { 
+            "source": "/api/leads",
+            "destination": "https://my-api-example.com/api/leads"
+        }
+    ]
+}
